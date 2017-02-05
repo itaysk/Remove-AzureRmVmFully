@@ -3,6 +3,10 @@ When you delete a VM in Azure, only the compute resource is removed, and the res
 Some advise to delete the resource group, but that's a problem if you use the resource group for other stuff as well.  
 This a helper PS function that I wrote, that can remove the VM including all the junk that it leaves after.
 
+Example usage:
+
+`Remove-AzureRmVmFully -ResourceGroupName "rg1" -Name "vm1" -RemoveStorageDiag -RemoveStorageOsDisk -RemoveStorageDataDisk -RemoveNics -RemoveNSG -RemovePip -RemoveVnet`
+
 The supported scenario at the moment is that of a new VM via the portal with all the defaults. This means:
 
 - 1 Compute resource
